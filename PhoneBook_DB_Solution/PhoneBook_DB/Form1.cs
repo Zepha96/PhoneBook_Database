@@ -18,9 +18,9 @@ namespace PhoneBook_DB
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.ROBOTO_REGULAR_11 = new Font("Century Gothic", 10f, FontStyle.Regular);
-            materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Century Gothic", 10f, FontStyle.Bold);
-            materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Century Gothic", 10f, FontStyle.Regular);
+            materialSkinManager.ROBOTO_REGULAR_11 = new Font("Century Gothic", 11f, FontStyle.Regular);
+            materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Century Gothic", 12f, FontStyle.Bold);
+            materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Century Gothic", 11f, FontStyle.Regular);
             materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Century Gothic", 10f, FontStyle.Bold);
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue500,
                                                                            MaterialSkin.Primary.Blue800,
@@ -28,6 +28,7 @@ namespace PhoneBook_DB
                                                                            MaterialSkin.Accent.Pink400,
                                                                            MaterialSkin.TextShade.BLACK);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            
 
         }
 
@@ -35,12 +36,23 @@ namespace PhoneBook_DB
         {
             // TODO: This line of code loads data into the 'pb_dataset.phone_book_table' table. You can move, or remove it, as needed.
             this.phone_book_tableTableAdapter.Fill(this.pb_dataset.phone_book_table);
-
+            this.dataGridViewDatabase.Refresh();
         }
 
         private void button_AddNumber_Click(object sender, EventArgs e)
         {
-            
+            AddNewNumberForm addData = new AddNewNumberForm();
+            //addData.MdiParent = this;
+            //addData.Show();
+            var form = Application.OpenForms["AddNewNumberForm"];
+            if (form == null)
+            {
+                addData.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Form is already Open", "Error");
+            }
         }
     }
 }

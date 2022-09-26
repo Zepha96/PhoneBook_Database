@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewNumberForm.Designer.cs">
+      <DependentUpon>AddNewNumberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\pb_dataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNewNumberForm.resx">
+      <DependentUpon>AddNewNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
