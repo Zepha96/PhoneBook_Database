@@ -27,7 +27,7 @@ namespace PhoneBook_DB
                                                                            MaterialSkin.Primary.Blue200,
                                                                            MaterialSkin.Accent.Pink400,
                                                                            MaterialSkin.TextShade.BLACK);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             
 
         }
@@ -36,14 +36,28 @@ namespace PhoneBook_DB
         {
             // TODO: This line of code loads data into the 'pb_dataset.phone_book_table' table. You can move, or remove it, as needed.
             this.phone_book_tableTableAdapter.Fill(this.pb_dataset.phone_book_table);
-            this.dataGridViewDatabase.Refresh();
+            this.phone_book_tableBindingNavigator.Renderer = new ToolStripRenderFIX();
         }
 
-        private void button_AddNumber_Click(object sender, EventArgs e)
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonMS_deleteRow_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this record?", "Warning!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.Cancel)
+            {
+                this.phone_book_tableBindingSource.RemoveCurrent();
+                this.Validate();
+                this.phone_book_tableBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.pb_dataset);
+            }
+        }
+
+        private void buttonMS_AddRecord_Click(object sender, EventArgs e)
         {
             AddNewNumberForm addData = new AddNewNumberForm();
-            //addData.MdiParent = this;
-            //addData.Show();
             var form = Application.OpenForms["AddNewNumberForm"];
             if (form == null)
             {

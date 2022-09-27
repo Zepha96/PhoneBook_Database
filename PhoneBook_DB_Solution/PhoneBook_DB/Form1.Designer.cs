@@ -29,35 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pb_dataset = new PhoneBook_DB.Dataset.pb_dataset();
-            this.pbdatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phonebooktableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phone_book_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phone_book_tableTableAdapter = new PhoneBook_DB.Dataset.pb_datasetTableAdapters.phone_book_tableTableAdapter();
-            this.button_AddNumber = new MaterialSkin.Controls.MaterialFlatButton();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zIPCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.webURLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studyFieldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.educationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewDatabase = new System.Windows.Forms.DataGridView();
+            this.tableAdapterManager = new PhoneBook_DB.Dataset.pb_datasetTableAdapters.TableAdapterManager();
+            this.phone_book_tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.phone_book_tableDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonMS_deleteRow = new System.Windows.Forms.ToolStripButton();
+            this.buttonMS_AddRecord = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dataset)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdatasetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phonebooktableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatabase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_book_tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_book_tableBindingNavigator)).BeginInit();
+            this.phone_book_tableBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_book_tableDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // pb_dataset
@@ -65,192 +75,282 @@
             this.pb_dataset.DataSetName = "pb_dataset";
             this.pb_dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pbdatasetBindingSource
+            // phone_book_tableBindingSource
             // 
-            this.pbdatasetBindingSource.DataSource = this.pb_dataset;
-            this.pbdatasetBindingSource.Position = 0;
-            // 
-            // phonebooktableBindingSource
-            // 
-            this.phonebooktableBindingSource.DataMember = "phone_book_table";
-            this.phonebooktableBindingSource.DataSource = this.pbdatasetBindingSource;
+            this.phone_book_tableBindingSource.DataMember = "phone_book_table";
+            this.phone_book_tableBindingSource.DataSource = this.pb_dataset;
             // 
             // phone_book_tableTableAdapter
             // 
             this.phone_book_tableTableAdapter.ClearBeforeFill = true;
             // 
-            // button_AddNumber
+            // tableAdapterManager
             // 
-            this.button_AddNumber.AutoSize = true;
-            this.button_AddNumber.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button_AddNumber.BackColor = System.Drawing.SystemColors.Control;
-            this.button_AddNumber.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_AddNumber.Depth = 0;
-            this.button_AddNumber.Icon = null;
-            this.button_AddNumber.Location = new System.Drawing.Point(13, 81);
-            this.button_AddNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.button_AddNumber.MouseState = MaterialSkin.MouseState.HOVER;
-            this.button_AddNumber.Name = "button_AddNumber";
-            this.button_AddNumber.Primary = false;
-            this.button_AddNumber.Size = new System.Drawing.Size(109, 36);
-            this.button_AddNumber.TabIndex = 1;
-            this.button_AddNumber.Text = "Add Number";
-            this.button_AddNumber.UseVisualStyleBackColor = false;
-            this.button_AddNumber.Click += new System.EventHandler(this.button_AddNumber_Click);
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.phone_book_tableTableAdapter = this.phone_book_tableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = PhoneBook_DB.Dataset.pb_datasetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // phone_book_tableBindingNavigator
             // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.phone_book_tableBindingNavigator.AddNewItem = null;
+            this.phone_book_tableBindingNavigator.AutoSize = false;
+            this.phone_book_tableBindingNavigator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.phone_book_tableBindingNavigator.BindingSource = this.phone_book_tableBindingSource;
+            this.phone_book_tableBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.phone_book_tableBindingNavigator.DeleteItem = null;
+            this.phone_book_tableBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.phone_book_tableBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.phone_book_tableBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.buttonMS_AddRecord,
+            this.buttonMS_deleteRow});
+            this.phone_book_tableBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.phone_book_tableBindingNavigator.Location = new System.Drawing.Point(115, 27);
+            this.phone_book_tableBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.phone_book_tableBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.phone_book_tableBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.phone_book_tableBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.phone_book_tableBindingNavigator.Name = "phone_book_tableBindingNavigator";
+            this.phone_book_tableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.phone_book_tableBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.phone_book_tableBindingNavigator.Size = new System.Drawing.Size(502, 35);
+            this.phone_book_tableBindingNavigator.TabIndex = 2;
+            this.phone_book_tableBindingNavigator.Text = "bindingNavigator1";
             // 
-            // address2DataGridViewTextBoxColumn
+            // bindingNavigatorMoveFirstItem
             // 
-            this.address2DataGridViewTextBoxColumn.DataPropertyName = "Address2";
-            this.address2DataGridViewTextBoxColumn.HeaderText = "Address2";
-            this.address2DataGridViewTextBoxColumn.Name = "address2DataGridViewTextBoxColumn";
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
-            // address1DataGridViewTextBoxColumn
+            // bindingNavigatorMovePreviousItem
             // 
-            this.address1DataGridViewTextBoxColumn.DataPropertyName = "Address1";
-            this.address1DataGridViewTextBoxColumn.HeaderText = "Address1";
-            this.address1DataGridViewTextBoxColumn.Name = "address1DataGridViewTextBoxColumn";
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
-            // zIPCodeDataGridViewTextBoxColumn
+            // bindingNavigatorPositionItem
             // 
-            this.zIPCodeDataGridViewTextBoxColumn.DataPropertyName = "ZIP_Code";
-            this.zIPCodeDataGridViewTextBoxColumn.HeaderText = "ZIP_Code";
-            this.zIPCodeDataGridViewTextBoxColumn.Name = "zIPCodeDataGridViewTextBoxColumn";
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 26);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // cityDataGridViewTextBoxColumn
+            // bindingNavigatorCountItem
             // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.bindingNavigatorCountItem.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 32);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // stateDataGridViewTextBoxColumn
+            // bindingNavigatorMoveNextItem
             // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
-            // countryDataGridViewTextBoxColumn
+            // bindingNavigatorMoveLastItem
             // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 32);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
-            // webURLDataGridViewTextBoxColumn
+            // phone_book_tableDataGridView
             // 
-            this.webURLDataGridViewTextBoxColumn.DataPropertyName = "Web_URL";
-            this.webURLDataGridViewTextBoxColumn.HeaderText = "Web_URL";
-            this.webURLDataGridViewTextBoxColumn.Name = "webURLDataGridViewTextBoxColumn";
+            this.phone_book_tableDataGridView.AllowUserToAddRows = false;
+            this.phone_book_tableDataGridView.AutoGenerateColumns = false;
+            this.phone_book_tableDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.phone_book_tableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phone_book_tableDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19});
+            this.phone_book_tableDataGridView.DataSource = this.phone_book_tableBindingSource;
+            this.phone_book_tableDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.phone_book_tableDataGridView.Location = new System.Drawing.Point(0, 65);
+            this.phone_book_tableDataGridView.Name = "phone_book_tableDataGridView";
+            this.phone_book_tableDataGridView.Size = new System.Drawing.Size(1050, 457);
+            this.phone_book_tableDataGridView.TabIndex = 2;
             // 
-            // emailDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // phone2DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.phone2DataGridViewTextBoxColumn.DataPropertyName = "Phone2";
-            this.phone2DataGridViewTextBoxColumn.HeaderText = "Phone2";
-            this.phone2DataGridViewTextBoxColumn.Name = "phone2DataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "First_Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "First_Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // phone1DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.phone1DataGridViewTextBoxColumn.DataPropertyName = "Phone1";
-            this.phone1DataGridViewTextBoxColumn.HeaderText = "Phone1";
-            this.phone1DataGridViewTextBoxColumn.Name = "phone1DataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Last_Name";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Last_Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // studyFieldDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.studyFieldDataGridViewTextBoxColumn.DataPropertyName = "Study_Field";
-            this.studyFieldDataGridViewTextBoxColumn.HeaderText = "Study_Field";
-            this.studyFieldDataGridViewTextBoxColumn.Name = "studyFieldDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Customer_ID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Customer_ID";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // educationDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.educationDataGridViewTextBoxColumn.DataPropertyName = "Education";
-            this.educationDataGridViewTextBoxColumn.HeaderText = "Education";
-            this.educationDataGridViewTextBoxColumn.Name = "educationDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Birth_Date";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Birth_Date";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // genderDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Gender";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Gender";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // birthDateDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.birthDateDataGridViewTextBoxColumn.DataPropertyName = "Birth_Date";
-            this.birthDateDataGridViewTextBoxColumn.HeaderText = "Birth_Date";
-            this.birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Education";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Education";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // customerIDDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "Customer_ID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "Customer_ID";
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Study_Field";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Study_Field";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Phone1";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Phone1";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn10
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Phone2";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Phone2";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // iDDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn11
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // dataGridViewDatabase
+            // dataGridViewTextBoxColumn12
             // 
-            this.dataGridViewDatabase.AutoGenerateColumns = false;
-            this.dataGridViewDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDatabase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.customerIDDataGridViewTextBoxColumn,
-            this.birthDateDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.educationDataGridViewTextBoxColumn,
-            this.studyFieldDataGridViewTextBoxColumn,
-            this.phone1DataGridViewTextBoxColumn,
-            this.phone2DataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.webURLDataGridViewTextBoxColumn,
-            this.countryDataGridViewTextBoxColumn,
-            this.stateDataGridViewTextBoxColumn,
-            this.cityDataGridViewTextBoxColumn,
-            this.zIPCodeDataGridViewTextBoxColumn,
-            this.address1DataGridViewTextBoxColumn,
-            this.address2DataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
-            this.dataGridViewDatabase.DataSource = this.phonebooktableBindingSource;
-            this.dataGridViewDatabase.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewDatabase.Location = new System.Drawing.Point(0, 370);
-            this.dataGridViewDatabase.Name = "dataGridViewDatabase";
-            this.dataGridViewDatabase.Size = new System.Drawing.Size(1050, 333);
-            this.dataGridViewDatabase.TabIndex = 0;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Web_URL";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Web_URL";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Country";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Country";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "State";
+            this.dataGridViewTextBoxColumn14.HeaderText = "State";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "City";
+            this.dataGridViewTextBoxColumn15.HeaderText = "City";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "ZIP_Code";
+            this.dataGridViewTextBoxColumn16.HeaderText = "ZIP_Code";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Address1";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Address1";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "Address2";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Address2";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // buttonMS_deleteRow
+            // 
+            this.buttonMS_deleteRow.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMS_deleteRow.Image = ((System.Drawing.Image)(resources.GetObject("buttonMS_deleteRow.Image")));
+            this.buttonMS_deleteRow.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonMS_deleteRow.Name = "buttonMS_deleteRow";
+            this.buttonMS_deleteRow.Size = new System.Drawing.Size(136, 32);
+            this.buttonMS_deleteRow.Text = "Delete Record";
+            this.buttonMS_deleteRow.Click += new System.EventHandler(this.buttonMS_deleteRow_Click);
+            // 
+            // buttonMS_AddRecord
+            // 
+            this.buttonMS_AddRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMS_AddRecord.Image = ((System.Drawing.Image)(resources.GetObject("buttonMS_AddRecord.Image")));
+            this.buttonMS_AddRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonMS_AddRecord.Name = "buttonMS_AddRecord";
+            this.buttonMS_AddRecord.Size = new System.Drawing.Size(118, 32);
+            this.buttonMS_AddRecord.Text = "Add Record";
+            this.buttonMS_AddRecord.Click += new System.EventHandler(this.buttonMS_AddRecord_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 703);
-            this.Controls.Add(this.button_AddNumber);
-            this.Controls.Add(this.dataGridViewDatabase);
+            this.ClientSize = new System.Drawing.Size(1050, 522);
+            this.Controls.Add(this.phone_book_tableDataGridView);
+            this.Controls.Add(this.phone_book_tableBindingNavigator);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -260,40 +360,49 @@
             this.Text = "Phone Book";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_dataset)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbdatasetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phonebooktableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatabase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_book_tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_book_tableBindingNavigator)).EndInit();
+            this.phone_book_tableBindingNavigator.ResumeLayout(false);
+            this.phone_book_tableBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_book_tableDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource pbdatasetBindingSource;
         private Dataset.pb_dataset pb_dataset;
-        private System.Windows.Forms.BindingSource phonebooktableBindingSource;
+        private System.Windows.Forms.BindingSource phone_book_tableBindingSource;
         private Dataset.pb_datasetTableAdapters.phone_book_tableTableAdapter phone_book_tableTableAdapter;
-        private MaterialSkin.Controls.MaterialFlatButton button_AddNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zIPCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn webURLDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studyFieldDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn educationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        public System.Windows.Forms.DataGridView dataGridViewDatabase;
+        private Dataset.pb_datasetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator phone_book_tableBindingNavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.ToolStripButton buttonMS_deleteRow;
+        private System.Windows.Forms.ToolStripButton buttonMS_AddRecord;
+        public System.Windows.Forms.DataGridView phone_book_tableDataGridView;
     }
 }
 

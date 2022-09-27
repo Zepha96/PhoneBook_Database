@@ -16,18 +16,18 @@ namespace PhoneBook_DB
         public AddNewNumberForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.ROBOTO_REGULAR_11 = new Font("Century Gothic", 11f, FontStyle.Regular);
-            materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Century Gothic", 12f, FontStyle.Bold);
-            materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Century Gothic", 11f, FontStyle.Regular);
-            materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Century Gothic", 10f, FontStyle.Bold);
-            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue500,
-                                                                           MaterialSkin.Primary.LightBlue800,
-                                                                           MaterialSkin.Primary.LightBlue200,
-                                                                           MaterialSkin.Accent.Pink400,
-                                                                           MaterialSkin.TextShade.WHITE);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //var materialSkinManager = MaterialSkinManager.Instance;
+            //materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.ROBOTO_REGULAR_11 = new Font("Century Gothic", 11f, FontStyle.Regular);
+            //materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Century Gothic", 12f, FontStyle.Bold);
+            //materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Century Gothic", 11f, FontStyle.Regular);
+            //materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Century Gothic", 10f, FontStyle.Bold);
+            //materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue500,
+            //                                                               MaterialSkin.Primary.LightBlue800,
+            //                                                               MaterialSkin.Primary.LightBlue200,
+            //                                                               MaterialSkin.Accent.Pink400,
+            //                                                               MaterialSkin.TextShade.WHITE);
+            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
         private void AddNewNumberForm_Load(object sender, EventArgs e)
@@ -39,13 +39,11 @@ namespace PhoneBook_DB
 
         private void phone_book_tableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-
             this.Validate();
             this.phone_book_tableBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.pb_dataset);
-            this.Close();
-            form1.dataGridViewDatabase.Refresh();
+            MessageBox.Show("Data saved successfully", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.groupBoxInfo.Enabled = false;
         }
 
         // ----------------------------First Name
@@ -189,12 +187,37 @@ namespace PhoneBook_DB
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-
+            this.groupBoxInfo.Enabled = true;
+            this.phone_book_tableBindingNavigatorSaveItem.Enabled = true;
+            this.textboxMS_FirstName.Text = null;
+            this.textboxMS_LastName.Text = null;
+            this.textboxMS_CustomerID.Text = null;
+            this.textboxMS_Gender.Text = null;
+            this.textboxMS_Education.Text = null;
+            this.textboxMS_StudyField.Text = null;
+            this.textboxMS_Phone1.Text = null;
+            this.textboxMS_Phone2.Text = null;
+            this.textboxMS_Email.Text = null;
+            this.textboxMS_webURL.Text = null;
+            this.textboxMS_Country.Text = null;
+            this.textboxMS_State.Text = null;
+            this.textboxMS_City.Text = null;
+            this.textboxMS_ZIPCode.Text = null;
+            this.textboxMS_Address1.Text = null;
+            this.textboxMS_Address2.Text = null;
+            this.textboxMS_Description.Text = null;
+            
         }
 
-        private void buttonMS_AddNumber_Click(object sender, EventArgs e)
+        private void toolStripButton_Close_Click(object sender, EventArgs e)
         {
+            //Form1 grid = new Form1();
+            //this.phone_book_tableTableAdapter.Fill(this.pb_dataset.phone_book_table);
+            //grid.phone_book_tableDataGridView.Update();
+            //grid.phone_book_tableDataGridView.Refresh();
 
+            this.Close();
         }
+
     }
 }
